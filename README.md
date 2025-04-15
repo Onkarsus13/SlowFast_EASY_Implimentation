@@ -30,6 +30,7 @@ python3 setup.py install
 
 # Dataset Strcuture
 
+```
 project_root/
 ├── Video_fold/
 │   ├── Train_video/
@@ -41,6 +42,7 @@ project_root/
 │       ├── videoY.mp4
 │       └── ...
 ├── Metadata.csv
+```
 
 
 ```video_name```: Name of the video file (must match the file in the folder).

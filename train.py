@@ -49,9 +49,9 @@ class VideoTrainer:
 
                 total_loss += loss.item()
 
-                outputs = outputs.softmax(dim=1)
+                outputs = torch.softmax(outputs, dim=1)
                 _, predicted = outputs.max(1)
-                
+
                 total += labels.size(0)
                 correct += predicted.eq(labels).sum().item()
 

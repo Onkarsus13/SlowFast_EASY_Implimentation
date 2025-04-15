@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: slowfast
+Version: 1.0
+Summary: SlowFast Video Understanding
+Home-page: unknown
+Author: FAIR
+License-File: LICENSE
+Provides-Extra: tensorboard-video-visualization
+Requires-Dist: moviepy; extra == "tensorboard-video-visualization"
+Dynamic: author
+Dynamic: home-page
+Dynamic: provides-extra
+Dynamic: summary

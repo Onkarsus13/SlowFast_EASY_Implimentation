@@ -88,7 +88,7 @@ if __name__ == "__main__":
     cfg = load_config(args, "/home/awd8324/onkar/SlowFast/configs/Kinetics/MVITv2_L_40x3_test.yaml")
 
 
-    metadata = pd.read_csv('Metadata.csv')
+    metadata = pd.read_csv(cfg.DATA.PATH_TO_DATA_DIR+'/Metadata.csv')
     train_metadata = metadata[metadata['train/valid'] == 'Train_video']
     valid_metadata = metadata[metadata['train/valid'] == 'Valid_video']
 
@@ -99,8 +99,8 @@ if __name__ == "__main__":
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     
-    train_dataset = VideoDataset(train_metadata, 'Video_fold', transform, num_frames=40, sampling_rate=3)
-    valid_dataset = VideoDataset(valid_metadata, 'Video_fold', transform, num_frames=40, sampling_rate=3)
+    train_dataset = VideoDataset(train_metadata, cfg.DATA.PATH_TO_DATA_DIR, transform, num_frames=40, sampling_rate=3)
+    valid_dataset = VideoDataset(valid_metadata, cfg.DATA.PATH_TO_DATA_DIR, transform, num_frames=40, sampling_rate=3)
     train_loader = DataLoader(train_dataset, batch_size=cfg.TRAIN.BATCH_SIZE, shuffle=True, num_workers=4)
     valid_loader = DataLoader(valid_dataset, batch_size=cfg.TEST.BATCH_SIZE, shuffle=False, num_workers=4)
 

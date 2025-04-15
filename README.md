@@ -51,6 +51,14 @@ project_root/
 
 ```classname```: The action or category label for the video.
 
+# Download Checkpoint
+
+Firslty you need to Download the checkpoint from the given command
+
+```
+wget -P checkpoints https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/mvitv2/pysf_video_models/MViTv2_L_40x3_k400_f306903192.pyth
+```
+
 
 # Finetuning
 
